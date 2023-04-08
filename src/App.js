@@ -51,51 +51,55 @@ function App() {
   };
 
   return (
-    <div>
-      {loading ? (
-        <p>Loading movies...</p>
-      ) : error ? (
-        <p>Error loading movies: {error}</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th onClick={() => handleSort("title")}>
-                Title {sort.column === "title" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
-              </th>
-              <th >
-                Rental Rate {sort.column === "rental_rate" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
-              </th>
-              <th>
-                Rating {sort.column === "rating" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
-              </th>
-              <th onClick={() => handleSort("name")}>
-               Genre {sort.column === "name" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
-              </th>
-              <th onClick={() => handleSort("rental_count")}>
-                Rental Count {sort.column === "rental_count" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {movies.map((movie) => (
-              <tr key={movie.film_id}>
-                <td>{movie.title}</td>
-                <td>{movie.rental_rate}</td>
-                <td>{movie.rating}</td>
-                <td>{movie.category}</td>
-                <td>{movie.rental_count}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )}
-  <div className="bottom">
-  <span>Nombre de resultats: {totalResults }</span>
-  <span> Nombre de lignes par page <input type="text" onChange={handleMoviePerpages} value={moviesPerPage} /></span>
-  </div>
-  <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
-</div>
+    <><header>
+      <h1>Pagination</h1>
+    </header><div>
+        {loading ? (
+          <p>Loading movies...</p>
+        ) : error ? (
+          <p>Error loading movies: {error}</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th onClick={() => handleSort("title")}>
+                  Title {sort.column === "title" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
+                </th>
+                <th>
+                  Rental Rate {sort.column === "rental_rate" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
+                </th>
+                <th>
+                  Rating {sort.column === "rating" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
+                </th>
+                <th onClick={() => handleSort("name")}>
+                  Genre {sort.column === "name" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
+                </th>
+                <th onClick={() => handleSort("rental_count")}>
+                  Rental Count {sort.column === "rental_count" && <span>{sort.direction === "asc" ? "▲" : "▼"}</span>}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {movies.map((movie) => (
+                <tr key={movie.film_id}>
+                  <td>{movie.title}</td>
+                  <td>{movie.rental_rate}</td>
+                  <td>{movie.rating}</td>
+                  <td>{movie.category}</td>
+                  <td>{movie.rental_count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+        <div className="bottom">
+          <span>Nombre de resultats: {totalResults}</span>
+          <span> Nombre de lignes par page <input type="text" onChange={handleMoviePerpages} value={moviesPerPage} /></span>
+        </div>
+        <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
+      </div><footer>
+        <p>Projet pagination Backend HETIC-2023</p>
+      </footer></>
   );
 }
 

@@ -95,6 +95,16 @@ th:hover {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+header, footer {
+  background-color: #ccc;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 
 
 
