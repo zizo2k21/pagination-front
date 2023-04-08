@@ -1,0 +1,7 @@
+.page-navigation li:not(:first-child)::before {
+  content: " · ";
+}
+
+.page-navigation li:last-child::after {
+  content: " ···";
+}
