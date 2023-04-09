@@ -94,7 +94,7 @@ function App() {
         )}
         <div className="bottom">
           <span>Nombre de resultats: {totalResults}</span>
-          <span> Nombre de lignes par page <input type="text" onChange={handleMoviePerpages} value={moviesPerPage} /></span>
+          <span> Nombre de lignes par page <input type="number" min={10} onChange={handleMoviePerpages} value={moviesPerPage} /></span>
         </div>
         <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
       </div><footer>
