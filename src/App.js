@@ -99,6 +99,11 @@ function App() {
         <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
       </div><footer>
         <p>Projet pagination Backend HETIC-2023</p>
+        <ul>
+          <li><a href="https://github.com/zizo2k21/pagination-front">Lien vers repo front</a></li>
+          <li><a href="https://github.com/zizo2k21/pagination-back">Lien vers repo back</a></li>
+        </ul>
+        
       </footer></>
   );
 }
